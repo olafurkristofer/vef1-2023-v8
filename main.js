@@ -98,9 +98,9 @@ for (const form of Array.from(addToCartForms)) {
   form.addEventListener('submit', submitHandler);
 }
 
-var checkoutForm = document.querySelector('method[class="checkout"]')
+/*  var checkoutForm = document.querySelector('method[class="checkout"]')
 checkoutForm.addEventListener('submit', function(event){
   event.preventDefault()
-})
+})*/
 
 // TODO bæta við event handler á form sem submittar pöntun
