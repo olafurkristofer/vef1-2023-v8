@@ -46,10 +46,18 @@ function addProductToCart(product, quantity) {
     console.warn('fann ekki .cart table');
     return;
   }
-  
-  // TODO hér þarf að athuga hvort lína fyrir vöruna sé þegar til
-  const cartLine = createCartLine(product, quantity);
-  cartTableBodyElement.appendChild(cartLine);
+
+    const productAlreadyInCart = cartTableBodyElement.querySelector(`[data-product-id="${product.id}"]`);
+
+    if (productAlreadyInCart) {
+      const newQuantity = productAlreadyInCart.getElementsByTagName('input');
+      console.log(newQuantity);
+    } else {
+      const cartLine = createCartLine(product, quantity);
+      cartTableBodyElement.appendChild(cartLine);
+    }
+
+    
 
   // Sýna efni körfu
   showCartContent(true);
@@ -74,9 +82,8 @@ function submitHandler(event) {
     return;
   }
 
-  // TODO hér þarf að finna fjölda sem á að bæta við körfu með því að athuga
-  // á input
-  const quantity = 1;
+  const quantityInput = parent.querySelector('input[type="number"]');
+  const quantity = parseInt(quantityInput.value);
 
   // Bætum vöru í körfu (hér væri gott að bæta við athugun á því að varan sé til)
   addProductToCart(product, quantity);
