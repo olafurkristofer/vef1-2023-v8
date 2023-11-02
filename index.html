@@ -64,50 +64,51 @@
       <h2>Karfa</h2>
       <div class="cart-message">
         <p class="empty-message">Ekkert í körfu.</p>
-        <div class="cart-content hidden">eitthvað í körfu.</div>
       </div>
-
-      <table id = "cart" class="table">
-        <thead>
-          <tr>
-            <th>Heiti</th>
-            <th>Fjöldi</th>
-            <th>Verð</th>
-            <th>Samtals</th>
-            <th>Eyða</th>
-          </tr>
-        </thead>
-        <tbody>
-        </tbody>
-        <tfoot>
-          <tr>
-            <td colspan="3">Samtals</td>
-            <td><span class="price"></span></td>
-            <td></td>
-          </tr>
-        </tfoot>
-      </table>
-
+      <div class="cart-content hidden">
+        <table id = "cart" class="table">
+          <thead>
+            <tr>
+              <th>Heiti</th>
+              <th>Fjöldi</th>
+              <th>Verð</th>
+              <th>Samtals</th>
+              <th>Eyða</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="3">Samtals</td>
+              <td><span class="price"></span></td>
+              <td></td>
+            </tr>
+          </tfoot>
+        </table>
+        <div>
+        <form method="post">
+          <div class="form-field">
+            <label for="name">Nafn:</label>
+            <input type="text" name="name" id="name">
+          </div>
+          <div class="form-field">
+            <label for="address">Heimilisfang:</label>
+            <input type="text" name="address" id="address">
+          </div>
+          <form method="post" class="checkout">
+            <button>Ganga frá kaupum</button>
+          </form>
+        </form>
       </div>
-
-      <form method="post">
-        <div class="form-field">
-          <label for="name">Nafn:</label>
-          <input type="text" name="name" id="name">
-        </div>
-        <div class="form-field">
-          <label for="address">Heimilisfang:</label>
-          <input type="text" name="address" id="address">
-        </div>
-        <button>Ganga frá kaupum</button>
-      </form>
-
-    </section>
-    <section class="receipt">
-      <h2>Kvittun</h2>
-      <p>Takk fyrir að versla hjá okkur!</p>
-      <p><a href=".">Kaupa meira</a>.</p>
-    </section>
+      </section>
+      <div class="hidden">
+      <section class="receipt">
+        <h2>Kvittun</h2>
+        <p>Takk fyrir að versla hjá okkur!</p>
+        <p><a href=".">Kaupa meira</a>.</p>
+      </section>
+    </div>
   </main>
 </body>
 
